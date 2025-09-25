@@ -193,8 +193,16 @@ function animateCounters() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const counter = entry.target;
-                const target = parseInt(counter.textContent.replace(/\D/g, ''));
-                const suffix = counter.textContent.replace(/\d/g, '');
+                const originalText = counter.textContent;
+
+                // Skip animation for special cases like "24/7"
+                if (originalText.includes('/')) {
+                    observer.unobserve(counter);
+                    return;
+                }
+
+                const target = parseInt(originalText.replace(/\D/g, ''));
+                const suffix = originalText.replace(/\d/g, '');
 
                 animateCounter(counter, 0, target, suffix, 2000);
                 observer.unobserve(counter);
