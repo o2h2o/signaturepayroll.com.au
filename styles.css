@@ -539,15 +539,111 @@ section {
     font-weight: 600;
 }
 
+/* News Section */
+.news-section {
+    background-color: #f8fafc;
+    padding: 80px 0;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.news-article {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #2b6cb0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.article-header h3 {
+    color: #1a202c;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.article-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.article-meta .date {
+    color: #2b6cb0;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.article-meta .category {
+    background-color: #e6f3ff;
+    color: #2b6cb0;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.article-excerpt {
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.article-insights {
+    margin-top: 1.5rem;
+}
+
+.article-insights h4 {
+    color: #2b6cb0;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.article-insights ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.article-insights ul li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+.article-insights ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #2b6cb0;
+    font-weight: bold;
+}
+
 /* Resources Section */
 .resources {
     background-color: white;
 }
 
+.resource-intro {
+    margin-bottom: 2rem;
+    font-style: italic;
+    color: #4a5568;
+}
+
 .resource-categories {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
+    display: block;
+    width: 100%;
 }
 
 .resource-category h3 {
@@ -587,8 +683,8 @@ section {
 
 .systems-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
 }
 
 .system-card {
@@ -610,7 +706,23 @@ section {
 
 .system-card p {
     font-size: 0.9rem;
-    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.system-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.system-highlights span {
+    background-color: #e6f3ff;
+    color: #2b6cb0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
 /* Careers Section */
@@ -868,13 +980,18 @@ section {
         gap: 2rem;
     }
 
-    .resource-categories {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
 
     .systems-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .news-grid {
         grid-template-columns: 1fr;
+    }
+
+    .news-article {
+        padding: 2rem 1.5rem;
     }
 
     .story-results {
@@ -928,6 +1045,10 @@ section {
 
     .stat {
         padding: 1.5rem;
+    }
+
+    .systems-grid {
+        grid-template-columns: 1fr;
     }
 }
 
