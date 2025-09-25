@@ -435,6 +435,86 @@ section {
     border: 1px solid #e2e8f0;
 }
 
+/* Partners Section */
+.partners {
+    background-color: white;
+    padding: 80px 0;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.partner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+    padding: 1rem;
+}
+
+.partner-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #2b6cb0;
+}
+
+.logo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.logo-placeholder span {
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.partner-logo:hover .logo-placeholder span {
+    color: #2b6cb0;
+}
+
+.partner-img {
+    max-width: 100%;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.7);
+    transition: all 0.3s ease;
+}
+
+.partner-logo:hover .partner-img {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.05);
+}
+
+.partners-note {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.partners-note p {
+    color: #4a5568;
+    font-size: 1rem;
+    margin: 0;
+}
+
 /* Success Stories Section */
 .success-stories {
     background-color: #f8fafc;
@@ -994,6 +1074,11 @@ section {
         padding: 2rem 1.5rem;
     }
 
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
     .story-results {
         flex-direction: column;
         gap: 1.5rem;
@@ -1049,6 +1134,15 @@ section {
 
     .systems-grid {
         grid-template-columns: 1fr;
+    }
+
+    .partners-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .partner-logo {
+        height: 100px;
     }
 }
 
